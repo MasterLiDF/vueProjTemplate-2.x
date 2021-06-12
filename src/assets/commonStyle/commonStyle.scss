@@ -1,0 +1,18 @@
+// 常用样式
+
+@mixin flexCenter {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin vxCenter {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.vxCenter {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
