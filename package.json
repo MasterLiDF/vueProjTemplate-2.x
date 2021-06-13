@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --report-json --mode production",
+    "build:dll": "webpack --config webpack.dll.js --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "add-asset-html-webpack-plugin": "^3.2.0",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
@@ -26,7 +28,8 @@
     "vue-router": "^3.5.1",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.6.2",
-    "webpack-bundle-analyzer": "^4.4.2"
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.2"
   },
   "eslintConfig": {
     "root": true,
