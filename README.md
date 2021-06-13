@@ -1,5 +1,11 @@
 # vue-proj
 
+## build
+
+```
+项目初次运行/打包/添加了新的库&拆分  npm run build:dll
+```
+
 ## Project setup
 
 ```
@@ -41,6 +47,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 封装 http 请求(防止重复请求)
 - 引入 sass-resources-loader,可以一次性引入公共样式
 - 引入 webpack-bundle-analyzer,对包体进行分析。(对比较大的包,考虑是否手写或者用其他插件替换)
+- 引入 add-asset-html-webpack-plugin,在根页面打包后，插入我们特定 script 的引用
+  - 之后会考虑将该插件替换为 html-webpack-tags-plugin(https://blog.csdn.net/qq_29722281/article/details/106626378)
 - 后续会陆续添加一下功能性组件(小功能不必去引入一些类库,减小包的体积)
   - 当前已有组件：
     - 手势组件/指令
@@ -51,6 +59,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 2.路由懒加载
 - 3.异步组件
 - 4.图片的压缩合并 https://tinypng.com/
-- 5.CDN 加速
-- 6.压缩代码&禁用 sourceMap
-- 7.多页面应用 需要提取公共库(例如:jq),避免公共库被每个页面都打包一次。
+- 5.压缩代码&禁用 sourceMap
+- 6.提取公共库(例如:vue,vant 等) && 配置 CDN 加速
+  - 方案 1:参考——https://www.it610.com/article/1293196391962714112.htm
+  - 方案 2:参考——https://www.jianshu.com/p/1b6c0042f355
+  - 注：开发环境方案 1 更合适,方案 2 配置的是 cdn 资源加载不如本地拉取快。
