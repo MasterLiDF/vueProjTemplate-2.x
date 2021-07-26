@@ -1,11 +1,16 @@
 <template>
   <div id="indexPage">
-    IndexPage {{ title }}
-    <div class="loader">test loader</div>
+    <!-- IndexPage {{ title }}
+    <div class="loader">test loader</div> -->
+    <vScroll />
   </div>
 </template>
 <script>
+import vScroll from '@/components/vScroll'
 export default {
+  components: {
+    vScroll,
+  },
   data() {
     return {
       title: 'vue template',
