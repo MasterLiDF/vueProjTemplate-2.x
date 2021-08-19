@@ -12,65 +12,10 @@ const commonFun = {
       return false;
     }
   },
-  //号码生成
-  numArrGen(min, max, withZero = false) {
-    let arr = [];
-    for (let i = min; i <= max; i++) {
-      let _i = i < 10 && withZero ? `0${i}` : `${i}`;
-      arr.push({
-        en_name: `${i}`,
-        name: `${_i}`
-      });
-    }
-    return arr;
-  },
-  //排序:从小到大
-  mSort(data = []) {
-    let arr = [...data];
-    for (var i = 0; i < arr.length - 1; i++) {
-      for (var j = 0; j < arr.length - 1 - i; j++) {
-        if (arr[j] > arr[j + 1]) {
-          var temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
-        }
-      }
-    }
-    return arr;
-  },
-  //秒->时:分:秒
-  secondToHMS(time) {
-    let h = Math.floor(time / (60 * 60));
-    let m = Math.floor((time - h * (60 * 60)) / 60);
-    let s = time - h * (60 * 60) - m * 60;
-    return `${h.toString().padStart(2, "0")}:${m
-      .toString()
-      .padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
-  },
-  //清理缓存
-  clearSomeCache() {
-    let whiteList = ["isLogin", "token", "userInfo"];
-    // 待办。
-    for (let i = 0; i < localStorage.length; i++) {
-      let key = localStorage.key(i);
-      if (whiteList.includes(key)) {
-        continue;
-      }
-      localStorage.removeItem(key);
-    }
-    sessionStorage.clear();
-    // 置空使用了localstorage的store
-    store.commit("lottery/initAllLotterys", null); 
-    store.commit("lottery/setSeries_menu", null);
-    store.commit("thirdGame/initAllThirdGames", null);
-    store.commit("thirdGame/setThirdGameMenu", null);
-    store.commit("lottery/clearFavList", null);
-  },
   logOut(){
     store.commit("auth/setToken", null);
     store.commit("auth/setLoginState", false);
     store.commit("auth/setUserInfo", {});
-    store.commit("lottery/clearFavList");
     localStorage.clear();
     sessionStorage.clear();
   },
