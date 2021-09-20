@@ -1,16 +1,24 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-import Index from "@/views/index";
-import User from "./user";
+import Index from './index'
+import User from './user'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
+
+// V3.1.0版本里面新增功能：push和replace方法会返回一个promise, 你可能在控制台看到未捕获的异常
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject)
+    return originalPush.call(this, location, onResolve, onReject)
+  return originalPush.call(this, location).catch(err => err)
+}
 
 const routes = [
   {
-    path: "/",
-    name: "Index",
-    component: Index,
+    path: '/',
+    name: 'Index',
+    component: Index
   },
   // {
   //   path: "/about",
@@ -21,11 +29,11 @@ const routes = [
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
   // },
-  ...User,
-];
+  ...User
+]
 
 const router = new VueRouter({
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
