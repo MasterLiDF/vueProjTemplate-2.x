@@ -1,19 +1,14 @@
 <template>
   <div id="indexPage">
-    <!-- IndexPage {{ title }}
-    <div class="loader">test loader</div> -->
-    <vScroll />
+    welcome
+    <div class="loader">{{ title }}</div>
   </div>
 </template>
 <script>
-import vScroll from '@/components/vScroll'
 export default {
-  components: {
-    vScroll,
-  },
   data() {
     return {
-      title: 'vue template',
+      title: 'vue2 template',
     }
   },
 }
@@ -21,6 +16,8 @@ export default {
 <style lang="scss" scoped>
 $red: red;
 #indexPage {
+  text-align: center;
+  margin: 100px;
   .loader {
     color: $red;
   }

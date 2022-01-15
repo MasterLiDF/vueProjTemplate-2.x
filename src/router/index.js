@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Index from './index'
+import Index from '@/views/index'
 import User from './user'
 
 Vue.use(VueRouter)
@@ -11,14 +11,14 @@ const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location, onResolve, onReject) {
   if (onResolve || onReject)
     return originalPush.call(this, location, onResolve, onReject)
-  return originalPush.call(this, location).catch(err => err)
+  return originalPush.call(this, location).catch((err) => err)
 }
 
 const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
   },
   // {
   //   path: "/about",
@@ -29,11 +29,11 @@ const routes = [
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
   // },
-  ...User
+  ...User,
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 
 export default router

@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --report-json --mode production",
-    "build:dll": "webpack --config webpack.dll.js --mode production",
-    "lint": "vue-cli-service lint"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "br": "npm run build -- --report"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -19,12 +18,15 @@
     "add-asset-html-webpack-plugin": "^3.2.0",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
+    "compression-webpack-plugin": "^9.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "filemanager-webpack-plugin": "^6.1.7",
     "node-sass": "^4.14.1",
     "qs": "^6.10.1",
     "sass-loader": "^7.3.1",
     "sass-resources-loader": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-router": "^3.5.1",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.6.2",
