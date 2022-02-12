@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV != 'development'
 console.log('环境',isProduction)
 // 样式和js的CDN外链，会插入到index.html中
 const cdn = {

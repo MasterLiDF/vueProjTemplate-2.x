@@ -59,8 +59,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 2.路由懒加载
 - 3.异步组件
 - 4.图片的压缩合并 https://tinypng.com/
-- 5.压缩代码&禁用 sourceMap
+- 5.压缩代码&&去掉注释与控制台输出&&禁用sourceMap
 - 6.提取公共库(例如:vue,vant 等) && 配置 CDN 加速
   - 方案 1:参考——https://www.it610.com/article/1293196391962714112.htm
   - 方案 2:参考——https://www.jianshu.com/p/1b6c0042f355
-  - 注：开发环境方案 1 更合适,方案 2 配置的是 cdn 资源加载不如本地拉取快。
+  - 方案 3:综合了方案1、2.
