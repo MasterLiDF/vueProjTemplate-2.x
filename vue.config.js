@@ -4,7 +4,6 @@ const FileManagerPlugin = require('filemanager-webpack-plugin')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const isProduction = process.env.NODE_ENV != 'development'
-console.log('环境',isProduction)
 // 样式和js的CDN外链，会插入到index.html中
 const cdn = {
   // 开发环境
@@ -121,10 +120,6 @@ module.exports = {
     return { plugins }
   },
   chainWebpack: (config) => {
-    config
-      .plugin('webpack-bundle-analyzer')
-      .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-
     const oneOfsMap = config.module.rule('scss').oneOfs.store
     oneOfsMap.forEach((item) => {
       item
