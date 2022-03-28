@@ -35,13 +35,7 @@ module.exports = {
   productionSourceMap: false,
   assetsDir: 'static',
   publicPath: './',
-  // css: {
-  //   loaderOptions: {
-  //     sass: {
-  //       prependData: `@import "./src/assets/styles/variables";`,
-  //     },
-  //   },
-  // },
+  // lintOnSave: false, // 关闭 eslint 检查
   devServer: {
     host: '0.0.0.0',
     port: 8081,
@@ -127,7 +121,7 @@ module.exports = {
         .loader('sass-resources-loader')
         .options({
           // Provide path to the file with resources
-          resources: './path/to/resources.scss',
+          // resources: './path/to/resources.scss',
 
           // Or array of paths
           resources: ['./src/assets/commonStyle/index.scss'],
